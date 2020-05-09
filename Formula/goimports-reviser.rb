@@ -7,11 +7,11 @@ class GoimportsReviser < Formula
 
   if OS.mac?
     url "http://github.com/incu6us/goimports-reviser/releases/download/v0.0.5/goimports-reviser_0.0.5_darwin_amd64.tar.gz"
-    sha256 "1dd8c1313febb1ce6274c7ec750b9e87d1e1fe041d75221b4d94d1aa359d49fc"
+    sha256 "685b5be962879065457bf9222741109e94e0604706f9714b3a5eb5a3c2e3b41e"
   elsif OS.linux?
     if Hardware::CPU.intel?
       url "http://github.com/incu6us/goimports-reviser/releases/download/v0.0.5/goimports-reviser_0.0.5_linux_amd64.tar.gz"
-      sha256 "5a47097c613b923b9cbae1787797a10554868708cba9af3abc5168a02366d607"
+      sha256 "38f22f3762dd59cdf8bf28af7dd9d2b358fbc7c958b2e609f9357f903cbafbc5"
     end
   end
 
