@@ -6,12 +6,12 @@ class GoimportsReviser < Formula
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/incu6us/goimports-reviser/releases/download/0.1.0/goimports-reviser_0.1.0_darwin_amd64.tar.gz"
-    sha256 "2639d1bdd3fc5d274a608fb11d3e9cb9fa0bad8be59f7fd05d5cb05fe73f46db"
+    url "https://github.com/incu6us/goimports-reviser/releases/download/v0.1.0/goimports-reviser_0.1.0_darwin_amd64.tar.gz"
+    sha256 "3f496d78891067fe86ea108c54c71aa168f4ba85f8e244b60aa8a03970bf7ad3"
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/incu6us/goimports-reviser/releases/download/0.1.0/goimports-reviser_0.1.0_linux_amd64.tar.gz"
-      sha256 "9d5971014259e4edc894097002ba949e82c86596b0c876475e088a79b9db3f78"
+      url "https://github.com/incu6us/goimports-reviser/releases/download/v0.1.0/goimports-reviser_0.1.0_linux_amd64.tar.gz"
+      sha256 "9366988e929d1e648629ee7e4e9a43df4b2f4bd666bbf5758755bb6972231464"
     end
   end
 
