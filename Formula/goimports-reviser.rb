@@ -2,16 +2,16 @@
 class GoimportsReviser < Formula
   desc "Right imports sorting & code formatting tool"
   homepage "https://github.com/incu6us/goimports-reviser"
-  version "2.2.0-rc1"
+  version "2.2.0"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/incu6us/goimports-reviser/releases/download/v2.2.0-rc1/goimports-reviser_2.2.0-rc1_darwin_amd64.tar.gz"
-    sha256 "18b8015b88a011065659dbc4b870571f94383621ac125221c37b63f78677fe08"
+    url "https://github.com/incu6us/goimports-reviser/releases/download/v2.2.0/goimports-reviser_2.2.0_darwin_amd64.tar.gz"
+    sha256 "2717a9e830d8ccbb12572a0eda7d4e56aceb4ea701a47ddb26e0a3f13f581b3b"
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/incu6us/goimports-reviser/releases/download/v2.2.0-rc1/goimports-reviser_2.2.0-rc1_linux_amd64.tar.gz"
-      sha256 "749b539e5e345ba877d070c2cea1a6ee0a832c90ec03f7989d3cfce5b9b544e4"
+      url "https://github.com/incu6us/goimports-reviser/releases/download/v2.2.0/goimports-reviser_2.2.0_linux_amd64.tar.gz"
+      sha256 "4a536a3d7b5c80e407be9cfca34a19be1c4f021bca6f93cbabc2e20404b8f875"
     end
   end
 
