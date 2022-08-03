@@ -5,20 +5,20 @@
 class GoimportsReviser < Formula
   desc "Right imports sorting & code formatting tool"
   homepage "https://github.com/incu6us/goimports-reviser"
-  version "3.0.0"
+  version "3.1.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/incu6us/goimports-reviser/releases/download/v3.0.0/goimports-reviser_3.0.0_darwin_amd64.tar.gz"
-      sha256 "126c0ebadde535d884e72ef57c3fcfb760043ea25206dc12548c838cab859f62"
+      url "https://github.com/incu6us/goimports-reviser/releases/download/v3.1.0/goimports-reviser_3.1.0_darwin_amd64.tar.gz"
+      sha256 "e72199cd362f81253a5fe7b041ef568f43f011634090bfd54750c0088218d79b"
 
       def install
         bin.install "goimports-reviser"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/incu6us/goimports-reviser/releases/download/v3.0.0/goimports-reviser_3.0.0_darwin_arm64.tar.gz"
-      sha256 "5b5361a3f3834aa207bbb6b0e768d069bd34d884a038172894608bba1375bcca"
+      url "https://github.com/incu6us/goimports-reviser/releases/download/v3.1.0/goimports-reviser_3.1.0_darwin_arm64.tar.gz"
+      sha256 "77ddfca421440e194152383f151743f3395335db4def9c978ec1901860a14a01"
 
       def install
         bin.install "goimports-reviser"
@@ -28,8 +28,8 @@ class GoimportsReviser < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/incu6us/goimports-reviser/releases/download/v3.0.0/goimports-reviser_3.0.0_linux_amd64.tar.gz"
-      sha256 "04a344166e2c7a710510beb81035c3f845802f512848cc8ee5d22abc6ac10088"
+      url "https://github.com/incu6us/goimports-reviser/releases/download/v3.1.0/goimports-reviser_3.1.0_linux_amd64.tar.gz"
+      sha256 "cc9528ae1b9eb0536217dda26172ddecb1ab59a3f00eaed928170cf266a1d2d9"
 
       def install
         bin.install "goimports-reviser"
