@@ -5,20 +5,20 @@
 class GoimportsReviser < Formula
   desc "Right imports sorting & code formatting tool"
   homepage "https://github.com/incu6us/goimports-reviser"
-  version "3.12.0"
+  version "3.12.1"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/incu6us/goimports-reviser/releases/download/v3.12.0/goimports-reviser_3.12.0_darwin_amd64.tar.gz"
-      sha256 "e7f9300f063bdf060cf27feaa4ff9914dedc404dbe433235152a9306383e3ffd"
+      url "https://github.com/incu6us/goimports-reviser/releases/download/v3.12.1/goimports-reviser_3.12.1_darwin_amd64.tar.gz"
+      sha256 "6f8373cbbbd95d556e0257ca2d0dcea180304845f7af7b47073b45d90b41fa5d"
 
       def install
         bin.install "goimports-reviser"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/incu6us/goimports-reviser/releases/download/v3.12.0/goimports-reviser_3.12.0_darwin_arm64.tar.gz"
-      sha256 "7d0f08e4a4fe0ca938f9f6a555e16a6c746c0d752d5acfe0aa1487ecf79c3cf0"
+      url "https://github.com/incu6us/goimports-reviser/releases/download/v3.12.1/goimports-reviser_3.12.1_darwin_arm64.tar.gz"
+      sha256 "11a497433098be163bf1f632a7e502a8be7801fe701d29843d1d2cdd359b2776"
 
       def install
         bin.install "goimports-reviser"
@@ -28,15 +28,15 @@ class GoimportsReviser < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/incu6us/goimports-reviser/releases/download/v3.12.0/goimports-reviser_3.12.0_linux_amd64.tar.gz"
-      sha256 "b0240985b6b6d3c9963e6ea1358c559e29c536fb4b88b5af2e86763bc03d3907"
+      url "https://github.com/incu6us/goimports-reviser/releases/download/v3.12.1/goimports-reviser_3.12.1_linux_amd64.tar.gz"
+      sha256 "c001b547dd5880f6752b67fef48d96f3b7f1f774446c89792587c1a5a99cbcbe"
       def install
         bin.install "goimports-reviser"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/incu6us/goimports-reviser/releases/download/v3.12.0/goimports-reviser_3.12.0_linux_arm64.tar.gz"
-      sha256 "bfccca401e4f98eb0c2d25b8e82f61070a1fd0255b636019cffc5a816acd95fc"
+      url "https://github.com/incu6us/goimports-reviser/releases/download/v3.12.1/goimports-reviser_3.12.1_linux_arm64.tar.gz"
+      sha256 "89803a1be099a3b4ce6a9616180eecc56b8f7a095693cf3da022f253c83cabe3"
       def install
         bin.install "goimports-reviser"
       end
