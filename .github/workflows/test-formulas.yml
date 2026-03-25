@@ -1,0 +1,33 @@
+name: Test Formulas
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    outputs:
+      formulas: ${{ steps.list.outputs.formulas }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: list
+        run: |
+          formulas=$(ls Formula/*.rb | xargs -I{} basename {} .rb | jq -R -s -c 'split("\n")[:-1]')
+          echo "formulas=$formulas" >> "$GITHUB_OUTPUT"
+
+  test:
+    needs: discover
+    strategy:
+      fail-fast: false
+      matrix:
+        formula: ${{ fromJson(needs.discover.outputs.formulas) }}
+        os: [ubuntu-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Tap repository
+        run: brew tap incu6us/homebrew-tap
+      - name: Install formula
+        run: brew install --verbose incu6us/homebrew-tap/${{ matrix.formula }}
+      - name: Test formula
+        run: brew test incu6us/homebrew-tap/${{ matrix.formula }}
