@@ -5,21 +5,21 @@
 class LokiMcpServer < Formula
   desc "MCP server exposing Grafana Loki log querying as MCP tools"
   homepage "https://github.com/incu6us/loki-mcp-server"
-  version "0.0.3"
+  version "0.0.4"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/incu6us/loki-mcp-server/releases/download/v0.0.3/loki-mcp-server_0.0.3_darwin_amd64.tar.gz"
-      sha256 "a34bd087e07cf782329d9047faecba5989cfca5f1da8903b65819f7394f38ec9"
+      url "https://github.com/incu6us/loki-mcp-server/releases/download/v0.0.4/loki-mcp-server_0.0.4_darwin_amd64.tar.gz"
+      sha256 "9c04ec62cd800c5b6b24676217d677bd0767201be4275afbc1521f74c7ff5cc4"
 
       define_method(:install) do
         bin.install "loki-mcp-server"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/incu6us/loki-mcp-server/releases/download/v0.0.3/loki-mcp-server_0.0.3_darwin_arm64.tar.gz"
-      sha256 "439ff9ec7c053a2d9d2a78150d0a51349feb8b7bc9043bd97aea53de1397afec"
+      url "https://github.com/incu6us/loki-mcp-server/releases/download/v0.0.4/loki-mcp-server_0.0.4_darwin_arm64.tar.gz"
+      sha256 "b972158c5236b2452200fd2ed01a94c366a9bcdbe8843db98b6212d4f8854a69"
 
       define_method(:install) do
         bin.install "loki-mcp-server"
@@ -29,15 +29,15 @@ class LokiMcpServer < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/incu6us/loki-mcp-server/releases/download/v0.0.3/loki-mcp-server_0.0.3_linux_amd64.tar.gz"
-      sha256 "f73d1e0d8ceafd5eff209ce0863e90e9f475ea76f3f906b2e724c75484a855bb"
+      url "https://github.com/incu6us/loki-mcp-server/releases/download/v0.0.4/loki-mcp-server_0.0.4_linux_amd64.tar.gz"
+      sha256 "0c8718a841bfe7967d927ffedecfbf7dc4e36a83a1c8988f4113e019202a9b58"
       define_method(:install) do
         bin.install "loki-mcp-server"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/incu6us/loki-mcp-server/releases/download/v0.0.3/loki-mcp-server_0.0.3_linux_arm64.tar.gz"
-      sha256 "ff91190b1fdd3d8467bcf39558f6e6428db9d5425457fc43dbaf5055791ce9f7"
+      url "https://github.com/incu6us/loki-mcp-server/releases/download/v0.0.4/loki-mcp-server_0.0.4_linux_arm64.tar.gz"
+      sha256 "93f666f475e59b584bd1520d263d1635870c06fa4861e1daeae36e9dd3bf7051"
       define_method(:install) do
         bin.install "loki-mcp-server"
       end
