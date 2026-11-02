@@ -9,12 +9,15 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       formulas: ${{ steps.list.outputs.formulas }}
+      casks: ${{ steps.list.outputs.casks }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - id: list
         run: |
           formulas=$(ls Formula/*.rb | xargs -I{} basename {} .rb | jq -R -s -c 'split("\n")[:-1]')
           echo "formulas=$formulas" >> "$GITHUB_OUTPUT"
+          casks=$(ls Casks/*.rb | xargs -I{} basename {} .rb | jq -R -s -c 'split("\n")[:-1]')
+          echo "casks=$casks" >> "$GITHUB_OUTPUT"
 
   test:
     needs: discover
@@ -26,10 +29,29 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - name: Set up Homebrew
-        uses: Homebrew/actions/setup-homebrew@master
+        uses: Homebrew/actions/setup-homebrew@main
       - name: Tap repository
-        run: brew tap incu6us/homebrew-tap
+        run: |
+          brew tap incu6us/homebrew-tap
+          brew trust --tap incu6us/tap
       - name: Install formula
         run: brew install --verbose incu6us/homebrew-tap/${{ matrix.formula }}
       - name: Test formula
         run: brew test incu6us/homebrew-tap/${{ matrix.formula }}
+
+  test-cask:
+    needs: discover
+    strategy:
+      fail-fast: false
+      matrix:
+        cask: ${{ fromJson(needs.discover.outputs.casks) }}
+    runs-on: macos-latest
+    steps:
+      - name: Set up Homebrew
+        uses: Homebrew/actions/setup-homebrew@main
+      - name: Tap repository
+        run: |
+          brew tap incu6us/homebrew-tap
+          brew trust --tap incu6us/tap
+      - name: Install cask
+        run: brew install --cask --verbose incu6us/homebrew-tap/${{ matrix.cask }}
